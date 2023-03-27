@@ -162,7 +162,7 @@ def test_moves_movie_from_watchlist_to_empty_watched():
     # raise Exception("Test needs to be completed.")
 
     assert len(updated_data["watchlist"]) == 0
-    assert janes_data ["watched"] ==  "watchlist": [{
+    assert janes_data ["watched"] == [{
             "title": MOVIE_TITLE_1,
             "genre": GENRE_1,
             "rating": RATING_1
