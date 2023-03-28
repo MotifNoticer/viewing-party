@@ -108,6 +108,7 @@ def get_most_watched_genre(user_data):
 # function to return list a list of dictionaries, that represents a list of movies
         # that she has watched but her friends haven't
 def get_unique_watched(user_data):
+<<<<<<< HEAD
 
     unique_user_data = []
     
@@ -130,6 +131,12 @@ def get_unique_watched(user_data):
 # def get_friends_unique_watched(user_data):
 
     unique_friends_data = []
+=======
+    pass
+
+def get_friends_unique_watched(user_data):
+    pass
+>>>>>>> parent of e004091 (completed wave 03)
 
 # -----------------------------------------
 # ------------- WAVE 4 --------------------
