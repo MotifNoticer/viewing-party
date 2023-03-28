@@ -74,7 +74,7 @@ def get_most_watched_genre(user_data):
     for movie in watched:
         if genre_dict[movie["genre"]] >= 1:
             genre_dict[movie["genre"]] += 1
-            continue
+
 
     # max(d, key = d.get)
     most_watched = max(genre_dict, key = genre_dict.get)
@@ -85,6 +85,11 @@ def get_most_watched_genre(user_data):
 # ------------- WAVE 3 --------------------
 # -----------------------------------------
 
+def get_unique_watched(user_data):
+    pass
+
+def get_friends_unique_watched(user_data):
+    pass
 
 # -----------------------------------------
 # ------------- WAVE 4 --------------------
