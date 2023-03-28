@@ -59,6 +59,24 @@ def get_watched_avg_rating(user_data):
 
 def get_most_watched_genre(user_data):
     pass
+    # What is deemed most popular? By rating? By count?
+    watched = user_data["watched"]
+
+    genre_dict = {}
+
+    # watched[0]["genre"] == "Fantasy"
+    for movie in watched:
+        genre_dict[movie["genre"]] = 1
+        
+    for movie in watched:
+        if genre_dict[movie["genre"]] >= 1:
+            genre_dict[movie["genre"]] += 1
+            continue
+
+    # max(d, key = d.get), min(d, key = d.get)
+    most_watched = max(genre_dict, key = genre_dict.get)
+    
+    return most_watched
 
 # -----------------------------------------
 # ------------- WAVE 3 --------------------
