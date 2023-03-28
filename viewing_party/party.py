@@ -64,6 +64,9 @@ def get_most_watched_genre(user_data):
 
     genre_dict = {}
 
+    if len(watched) == 0:
+        return None
+    
     # watched[0]["genre"] == "Fantasy"
     for movie in watched:
         genre_dict[movie["genre"]] = 1
@@ -73,7 +76,7 @@ def get_most_watched_genre(user_data):
             genre_dict[movie["genre"]] += 1
             continue
 
-    # max(d, key = d.get), min(d, key = d.get)
+    # max(d, key = d.get)
     most_watched = max(genre_dict, key = genre_dict.get)
     
     return most_watched
