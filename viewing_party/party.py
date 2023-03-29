@@ -142,6 +142,48 @@ def get_friends_unique_watched(user_data):
 # ------------- WAVE 4 --------------------
 # -----------------------------------------
 
+def get_available_recs(user_data):
+
+# Determine a list of recommended movies. 
+# A movie should be added to this list if and only if:
+#   - The user has not watched it
+#   - At least one of the user's friends has watched
+#   - The `"host"` of the movie is a service that is in 
+#   - the user's `"subscriptions"`
+# Return the list of recommended movies
+
+    # reccomendations = []
+
+    for i in range(len((user_data))): 
+        reccomendations = []
+        if user_data["subscriptions"] in user_data["friends"] and user_data["watched"] not in user_data["friends"]:
+            host = user_data["host"]
+            reccomendations.append(user_data["host"][i])
+
+            # reccomendations = []
+            # reccomendations.append(user_data["watched"] and (user_data["friends"]))
+            # reccomentations += 1
+            # reccomendations.append(user_data[i]["friends"])
+            # reccomendations.append(user_data["friends"][i])
+
+            if user_data["watched"] in user_data["friends"]:
+
+                continue
+
+        # if not user_data["subscriptions"] in user_data["friends"]:
+        #     host_list += 0
+        #     continue
+
+        # reccomendations += 1
+
+        return reccomendations
+
+    # the following code passes the last two tests
+    # for i in range(len(user_data["subscriptions"])):
+        
+    #     reccomendations = []
+
+    # return reccomendations
 # -----------------------------------------
 # ------------- WAVE 5 --------------------
 # -----------------------------------------
