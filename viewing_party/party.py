@@ -153,23 +153,28 @@ def get_available_recs(user_data):
 # - the user's `"subscriptions"`
 # Return the list of recommended movies
 
-    # reccomendations = []
+    recommendations = []
+    friends_unique_watched = get_friends_unique_watched(user_data)
+    
+    for movie in friends_unique_watched:
+        if movie["host"] in user_data["subscriptions"]:
+            recommendations.append(movie)
 
-    for i in range(len((user_data))): 
-        reccomendations = []
-        if user_data["subscriptions"] in user_data["friends"] and user_data["watched"] not in user_data["friends"]:
-            host = user_data["host"]
-            reccomendations.append(user_data["host"][i])
 
-            # reccomendations = []
-            # reccomendations.append(user_data["watched"] and (user_data["friends"]))
-            # reccomentations += 1
-            # reccomendations.append(user_data[i]["friends"])
-            # reccomendations.append(user_data["friends"][i])
+    # for i in range(len((user_data))): 
+    #     if user_data["subscriptions"] in user_data["friends"] and user_data["watched"] not in user_data["friends"]:
+    #         host = user_data["host"]
+    #         recommendations.append(host[i])
 
-            if user_data["watched"] in user_data["friends"]:
+    #         # recommendations = []
+    #         # recommendations.append(user_data["watched"] and (user_data["friends"]))
+    #         # reccomentations += 1
+    #         # reccomendations.append(user_data[i]["friends"])
+    #         # reccomendations.append(user_data["friends"][i])
 
-                continue
+    #         if user_data["watched"] in user_data["friends"]:
+
+    #             continue
 
         # if not user_data["subscriptions"] in user_data["friends"]:
         #     host_list += 0
@@ -177,7 +182,7 @@ def get_available_recs(user_data):
 
         # reccomendations += 1
 
-        return reccomendations
+    return recommendations
 
     # the following code passes the last two tests
     # for i in range(len(user_data["subscriptions"])):
