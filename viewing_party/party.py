@@ -100,6 +100,7 @@ def get_unique_watched(user_data):
 
     friends_movie_watched = []
 
+    # Big O notation of O(n^2), try to refactor
     for friend in friends:
         for i in range(len(friend["watched"])):
             friends_movie_watched.append(friend["watched"][i]) 
