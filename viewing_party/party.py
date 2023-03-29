@@ -146,10 +146,10 @@ def get_available_recs(user_data):
 
 # Determine a list of recommended movies. 
 # A movie should be added to this list if and only if:
-#   - The user has not watched it
-#   - At least one of the user's friends has watched
-#   - The `"host"` of the movie is a service that is in 
-#   - the user's `"subscriptions"`
+# - The user has not watched it
+# - At least one of the user's friends has watched
+# - The `"host"` of the movie is a service that is in 
+# - the user's `"subscriptions"`
 # Return the list of recommended movies
 
     # reccomendations = []
