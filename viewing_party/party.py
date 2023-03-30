@@ -181,7 +181,7 @@ def get_available_recs(user_data):
         #     continue
 
         # reccomendations += 1
-
+        
     return recommendations
 
     # the following code passes the last two tests
@@ -193,4 +193,38 @@ def get_available_recs(user_data):
 # -----------------------------------------
 # ------------- WAVE 5 --------------------
 # -----------------------------------------
+
+# Consider the user's most frequently watched genre. 
+# Then, determine a list of recommended movies. 
+# A movie should be added to this list if and only if:
+# - The user has not watched it
+# - At least one of the user's friends has watched
+# - The `"genre"` of the movie is the same as the user's most frequent genre
+# Return the list of recommended movies
+
+def get_new_rec_by_genre(user_data):
+    pass
+
+
+
+# Determine a list of recommended movies. 
+# A movie should be added to this list if and only if:
+# - The movie is in the user's `"favorites"`
+# - None of the user's friends have watched it
+# Return the list of recommended movies
+
+def get_rec_from_favorites(user_data):
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
 
