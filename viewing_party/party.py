@@ -155,9 +155,7 @@ def get_available_recs(user_data):
 
     recommendations = []
     
-    friends_unique_watched = get_friends_unique_watched(user_data)
-    
-    for movie in friends_unique_watched:
+    for movie in get_friends_unique_watched(user_data):
         if movie["host"] in user_data["subscriptions"]:
             recommendations.append(movie)
 
@@ -177,17 +175,14 @@ def get_new_rec_by_genre(user_data):
 # - At least one of the user's friends has watched
 # - The `"genre"` of the movie is the same as the user's most frequent genre
 # Return the list of recommended movies
-    recommendations = []
-    friends_unique_watched = get_friends_unique_watched(user_data)
-    favorite_genre = get_most_watched_genre(user_data)
 
-    for movie in friends_unique_watched:
-        if movie["genre"] == favorite_genre:
+    recommendations = []
+
+    for movie in get_friends_unique_watched(user_data):
+        if movie["genre"] == get_most_watched_genre(user_data):
             recommendations.append(movie)
 
     return recommendations
-
-
 
 def get_rec_from_favorites(user_data):
 
@@ -197,22 +192,10 @@ def get_rec_from_favorites(user_data):
 # - None of the user's friends have watched it
 # Return the list of recommended movies
     
-    
+    recommendations = []
 
+    for movie in user_data["favorites"]:
+        if movie in get_unique_watched(user_data):
+            recommendations.append(movie)
 
-
-
-
-
-
-
-
-
-
-
-
-def get_new_rec_by_genre():
-    pass
-
-def get_rec_from_favorites():
-    pass
+    return recommendations
