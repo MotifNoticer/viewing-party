@@ -154,12 +154,12 @@ def get_available_recs(user_data):
 # Return the list of recommended movies
 
     recommendations = []
+    
     friends_unique_watched = get_friends_unique_watched(user_data)
     
     for movie in friends_unique_watched:
         if movie["host"] in user_data["subscriptions"]:
             recommendations.append(movie)
-
 
     # for i in range(len((user_data))): 
     #     if user_data["subscriptions"] in user_data["friends"] and user_data["watched"] not in user_data["friends"]:
@@ -181,7 +181,6 @@ def get_available_recs(user_data):
         #     continue
 
         # reccomendations += 1
-
     return recommendations
 
     # the following code passes the last two tests
@@ -194,3 +193,8 @@ def get_available_recs(user_data):
 # ------------- WAVE 5 --------------------
 # -----------------------------------------
 
+def get_new_rec_by_genre():
+    pass
+
+def get_rec_from_favorites():
+    pass
