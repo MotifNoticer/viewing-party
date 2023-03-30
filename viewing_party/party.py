@@ -177,13 +177,20 @@ def get_new_rec_by_genre(user_data):
 # - At least one of the user's friends has watched
 # - The `"genre"` of the movie is the same as the user's most frequent genre
 # Return the list of recommended movies
-    
+    recommendations = []
+    friends_unique_watched = get_friends_unique_watched(user_data)
     favorite_genre = get_most_watched_genre(user_data)
+
+    for movie in friends_unique_watched:
+        if movie["genre"] == favorite_genre:
+            recommendations.append(movie)
+
+    return recommendations
 
 
 
 def get_rec_from_favorites(user_data):
-    
+
 # Determine a list of recommended movies. 
 # A movie should be added to this list if and only if:
 # - The movie is in the user's `"favorites"`
